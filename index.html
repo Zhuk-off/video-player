@@ -10,7 +10,8 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        overflow: hidden;
+        /* Разрешаем прокрутку для центрирования */
+        overflow-y: auto;
       }
       .video-container {
         width: 100%;
@@ -21,6 +22,9 @@
         align-items: center;
         justify-content: center;
         position: relative; /* Для позиционирования баннеров */
+        /* Добавляем отступы для лучшего центрирования */
+        padding: 20px 0;
+        box-sizing: border-box;
       }
       #local_video {
         width: auto;
@@ -74,6 +78,35 @@
     </style>
   </head>
   <body>
+    Nihil distinctio commodi aut reprehenderit illum at sit voluptate, aliquam
+    veniam velit non quia beatae sequi minus qui praesentium consequatur
+    incidunt ipsam ipsum. Molestias aliquid ipsam asperiores enim doloribus
+    nulla alias molestiae facere nihil iure consectetur voluptatem veritatis
+    ratione, a sunt! Dicta esse consequatur quos incidunt nostrum voluptas eius
+    cum a quidem repellendus enim neque fugit eveniet soluta et, commodi sit
+    consequuntur fugiat reprehenderit natus. Omnis possimus unde inventore nemo
+    beatae? Nihil harum assumenda exercitationem inventore quia quidem
+    consequuntur, quae vero veniam similique fugit ut sequi fuga eveniet labore
+    amet? Nam quidem doloremque, voluptatibus voluptas consectetur temporibus
+    amet quasi sint voluptatum in reprehenderit, aut architecto accusamus
+    quaerat. Dolor consequatur necessitatibus placeat maxime vero aliquam aut
+    temporibus, modi, odit omnis accusantium nemo velit, ratione nulla enim
+    dolorum nisi commodi iste error delectus distinctio reiciendis voluptatem
+    earum quo. Provident officiis amet, ipsa eius quis blanditiis dolorum,
+    repellendus vitae nemo, recusandae omnis itaque repellat culpa veniam eaque
+    autem aut quos minima. Harum eos exercitationem libero in. Tempora quia
+    temporibus atque architecto incidunt ullam reprehenderit voluptas a suscipit
+    facilis, similique voluptatem sed odio dicta expedita quasi, qui
+    necessitatibus velit, ex at. Nihil ullam nobis laboriosam veritatis
+    temporibus in mollitia quidem explicabo necessitatibus. Sit ex deserunt sed
+    nostrum fuga sequi delectus cupiditate reprehenderit dolorum hic perferendis
+    ullam, placeat facilis assumenda odit asperiores et beatae esse accusamus
+    magni, explicabo aperiam. Voluptates consectetur enim et possimus dolores
+    deserunt? Reiciendis quae, consequatur quibusdam unde iure eum ipsum quasi
+    ipsa dolorum magnam quod rerum? Officiis quidem consectetur cupiditate
+    laboriosam aliquam accusamus aliquid excepturi fuga, corporis perferendis
+    molestias explicabo sequi mollitia esse harum dolor vero exercitationem
+    autem.
     <div class="video-container">
       <video
         id="local_video"
@@ -105,7 +138,34 @@
         <p>Спасибо за просмотр!</p>
       </div>
     </div>
-
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, nostrum
+      pariatur excepturi voluptas dolores itaque provident reiciendis facilis
+      natus eos voluptatibus, enim repudiandae, doloremque rerum quod qui rem
+      asperiores molestias corporis neque! Hic commodi sed nobis minima quasi a
+      nulla nemo dolorem autem sunt animi quibusdam, quis tempora culpa beatae.
+      Deleniti blanditiis quod ducimus aperiam fugiat error, culpa
+      exercitationem illo impedit nobis dolores dolor hic autem modi nemo quam.
+      Repellendus inventore corrupti suscipit accusantium explicabo nobis odit
+      ratione vero dolores mollitia assumenda earum, obcaecati quia! Ad, error
+      culpa architecto illo eius incidunt iure nihil nam eaque obcaecati ea,
+      ullam recusandae adipisci molestiae eveniet sint et, aliquam minus amet
+      eum maxime impedit quasi cumque. Quia adipisci voluptate eaque voluptas
+      blanditiis non deserunt nam obcaecati sed earum, aut, omnis quis nulla
+      repellendus autem error sunt doloribus facere numquam sit. Adipisci error
+      expedita accusamus aliquid eius mollitia quasi perspiciatis fugit optio ad
+      placeat, omnis atque nam? Facilis suscipit consequatur voluptatum
+      temporibus quae, soluta deserunt adipisci provident, tempore repellendus
+      est consequuntur officia ipsam exercitationem? Beatae aspernatur
+      necessitatibus earum, at architecto quas enim ab deleniti esse quos
+      consequuntur accusamus expedita eos laboriosam repellendus voluptas fuga
+      officiis magni assumenda, vero excepturi corporis eligendi minima? Dolores
+      itaque sit suscipit ut autem officia. Dicta nesciunt ipsam, maiores
+      numquam earum facere nam, laborum natus perspiciatis quaerat libero
+      nostrum odit laudantium minus. Quidem animi, exercitationem maiores
+      laborum quo commodi sed, totam et voluptatum nisi provident architecto
+      deserunt optio incidunt reiciendis quos est?
+    </p>
     <!-- Подключаем скрипт адаптивного видеоплеера -->
     <script src="adaptive-video-player.js"></script>
     <script>
@@ -113,10 +173,7 @@
       window.AdaptiveVideoPlayer.init("local_video");
     </script>
 
-    <!-- Подключаем скрипт для управления паузой при клике на видео -->
-    <script src="video-pause-control.js"></script>
-
-    <!-- Подключаем скрипт для управления баннерами видео -->
-    <script src="video-banners.js"></script>
+    <!-- Подключаем объединенный скрипт для управления видео -->
+    <script src="video-player.js"></script>
   </body>
 </html>
