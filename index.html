@@ -20,6 +20,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative; /* Для позиционирования баннеров */
       }
       #local_video {
         width: auto;
@@ -27,6 +28,48 @@
         max-height: 100vh; /* Максимальная высота равна высоте экрана */
         max-width: 100%; /* Максимальная ширина равна ширине контейнера */
         object-fit: contain; /* Сохраняет пропорции и вписывает видео полностью */
+      }
+
+      /* Стили для баннеров */
+      .video-banner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 10;
+        display: none; /* По умолчанию баннеры скрыты */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-family: Arial, sans-serif;
+        max-width: 80%;
+        cursor: pointer;
+      }
+
+      .video-banner h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+
+      .video-banner p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      /* Специфичные стили для каждого баннера */
+      #muted-banner {
+        border-left: 4px solid #ffcc00;
+      }
+
+      #paused-banner {
+        border-left: 4px solid #3399ff;
+      }
+
+      #ended-banner {
+        border-left: 4px solid #66cc66;
       }
     </style>
   </head>
@@ -43,6 +86,24 @@
         <!-- Источники видео будут добавлены через JavaScript -->
         Your browser does not support videos.
       </video>
+
+      <!-- Баннер для беззвучного видео -->
+      <div id="muted-banner" class="video-banner">
+        <h3>Видео без звука</h3>
+        <p>Нажмите на видео, чтобы включить звук</p>
+      </div>
+
+      <!-- Баннер для паузы -->
+      <div id="paused-banner" class="video-banner">
+        <h3>Видео на паузе</h3>
+        <p>Нажмите на видео, чтобы продолжить просмотр</p>
+      </div>
+
+      <!-- Баннер для завершения видео -->
+      <div id="ended-banner" class="video-banner">
+        <h3>Видео завершено</h3>
+        <p>Спасибо за просмотр!</p>
+      </div>
     </div>
 
     <!-- Подключаем скрипт адаптивного видеоплеера -->
@@ -54,5 +115,8 @@
 
     <!-- Подключаем скрипт для управления паузой при клике на видео -->
     <script src="video-pause-control.js"></script>
+
+    <!-- Подключаем скрипт для управления баннерами видео -->
+    <script src="video-banners.js"></script>
   </body>
 </html>
