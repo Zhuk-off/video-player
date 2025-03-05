@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адаптивное видео</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      .video-container {
+        width: 100%;
+        height: 100vh; /* Высота равна высоте видимой области экрана */
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #local_video {
+        width: auto;
+        height: auto;
+        max-height: 100vh; /* Максимальная высота равна высоте экрана */
+        max-width: 100%; /* Максимальная ширина равна ширине контейнера */
+        object-fit: contain; /* Сохраняет пропорции и вписывает видео полностью */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <video
+        id="local_video"
+        preload="auto"
+        playsinline
+        muted
+        controls
+        controlsList="nodownload"
+      >
+        <!-- Источники видео будут добавлены через JavaScript -->
+        Your browser does not support videos.
+      </video>
+    </div>
+
+    <!-- Подключаем скрипт адаптивного видеоплеера -->
+    <script src="adaptive-video-player.js"></script>
+    <script>
+      // Инициализируем адаптивный видеоплеер
+      window.AdaptiveVideoPlayer.init("local_video");
+    </script>
+  </body>
+</html>
